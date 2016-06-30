@@ -33,7 +33,7 @@ public class SemaphoreTest {
 
 						Thread.sleep((long) (Math.random() * 10000));
 
-						// 访问完后，释放
+						// 访问完后，释放 countdownlatch
 
 						semp.release();
 
