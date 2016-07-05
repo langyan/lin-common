@@ -2,17 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<groupId>com.lin.common</groupId>
 	<artifactId>lin-common</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
-	
-	
-	
+
+
+
 	<!-- 项目属性 -->
 	<properties>
-		
+
 		<!-- main version setting -->
 		<mockito.version>1.9.5</mockito.version>
 		<junit.version>4.11</junit.version>
@@ -36,104 +36,109 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compile.encoding>UTF-8</maven.compile.encoding>
 		<maven.test.compile.encoding>UTF-8</maven.test.compile.encoding>
-		
+
 		<!-- tools version setting -->
-				
+
 		<jawr.version>3.6</jawr.version>
-		
+
 		<!-- jdbc driver setting -->
-		 
+
 		<!-- environment setting -->
-	    <jdk.version>1.7</jdk.version>
+		<jdk.version>1.7</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<downloadSources>true</downloadSources>
-		
+
 	</properties>
-	
+
 	<!-- 设定主仓库，按设定顺序进行查找。 -->
 	<repositories>
-        
-        <repository>
-            <id>java-repos</id>
-            <name>Java Repository</name>
-            <url>http://download.java.net/maven/2/</url>
-        </repository>
-        
-      
-        
+
+		<repository>
+			<id>java-repos</id>
+			<name>Java Repository</name>
+			<url>http://download.java.net/maven/2/</url>
+		</repository>
+
+
+
 		<repository>
 			<id>central-repos</id>
 			<name>Central Repository</name>
 			<url>http://repo.maven.apache.org/maven2</url>
 		</repository>
-		
+
 		<repository>
 			<id>central-repos2</id>
 			<name>Central Repository 2</name>
 			<url>http://repo1.maven.org/maven2/</url>
 		</repository>
-		
-	
-		
-		
-		
-	</repositories>
-	
 
-	
+
+
+
+
+	</repositories>
+
+
+
 	<!-- 依赖项定义 -->
 	<dependencies>
-	
-		
-		
-	
-			<!-- Test Dependencies -->
-			<dependency>
-				<groupId>org.mockito</groupId>
-				<artifactId>mockito-all</artifactId>
-				<version>${mockito.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>${junit.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>net.sourceforge.htmlunit</groupId>
-				<artifactId>htmlunit</artifactId>
-				<version>${htmlunit.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<!-- Other Dependencies -->
-			
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${slf4j-api.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j12</artifactId>
-				<version>${slf4j-api.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>log4j</groupId>
-				<artifactId>log4j</artifactId>
-				<version>${log4j.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			
-			
-			
-		
-		
+
+
+
+
+		<!-- Test Dependencies -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>${mockito.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.htmlunit</groupId>
+			<artifactId>htmlunit</artifactId>
+			<version>${htmlunit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- Other Dependencies -->
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+        <!-- cache  -->
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>2.10.0</version>
+		</dependency>
+
+
+
 	</dependencies>
 
 	<build>
-		
+
 		<plugins>
 			<!-- Compiler 插件, 设定JDK版本 -->
 			<plugin>
@@ -146,10 +151,10 @@
 					<showWarnings>true</showWarnings>
 				</configuration>
 			</plugin>
-			
-			
-		
-			
+
+
+
+
 			<!-- 打包jar文件时，配置manifest文件，加入lib包的jar依赖 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -158,10 +163,10 @@
 				<configuration>
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
-			
+
 			</plugin>
-			
-			
+
+
 			<!-- Eclipse 插件 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -186,37 +191,37 @@
 					</additionalProjectnatures>
 				</configuration>
 			</plugin>
-			
-		
-			
+
+
+
 			<!-- resource插件 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>2.6</version>
 			</plugin>
-			
+
 			<!-- install插件 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-install-plugin</artifactId>
 				<version>2.4</version>
 			</plugin>
-			
+
 			<!-- clean插件 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>2.5</version>
 			</plugin>
-			
+
 			<!-- ant插件 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<version>1.7</version>
 			</plugin>
-			
+
 			<!-- dependency插件 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -225,8 +230,8 @@
 			</plugin>
 		</plugins>
 	</build>
-	
-	
-	
-	
+
+
+
+
 </project>
