@@ -14,7 +14,7 @@ import java.util.concurrent.Future;
  * @author michaellin
  * 
  */
-public class SimpleClient {
+public class SimpleClient implements Cloneable{
 
 	private AsynchronousSocketChannel client;
 
