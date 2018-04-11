@@ -22,7 +22,9 @@ public class SimpleClient implements Cloneable {
 			InterruptedException, ExecutionException {
 		this.client = AsynchronousSocketChannel.open();
 		Future<?> future = client.connect(new InetSocketAddress(host, port));
-		future.get();
+		future.get(); 
+		
+//		Semaphore
 	}
 
 	public void write(byte b) {
