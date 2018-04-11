@@ -5,6 +5,8 @@ package com.lin.common.io;
 
 import static org.junit.Assert.*;
 
+import java.util.LinkedHashMap;
+
 import org.junit.Test;
 
 /**
