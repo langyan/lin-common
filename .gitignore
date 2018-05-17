@@ -3,3 +3,4 @@ target/*
 .settngs/
 .project
 .classpath
+*.bak
