@@ -4,16 +4,19 @@
 package com.lin.common.reflect;
 
 /**
+ * 
+ * StackTraceElement获取方法调用栈的信息
+ * 
  * @author michael
  *
  */
-public class StackTraceTest {
+public class StackTraceElementTest {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		StackTraceTest test=new StackTraceTest();
+		StackTraceElementTest test=new StackTraceElementTest();
 		test.methodA();
 
 	}
