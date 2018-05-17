@@ -2,4 +2,4 @@ lin-common
 ==========
 
 common 
-b
+a
