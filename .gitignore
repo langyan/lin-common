@@ -1,6 +1,6 @@
 target/*
 .idea
-.settngs/
+.settings/
 .project
 .classpath
 *.bak
