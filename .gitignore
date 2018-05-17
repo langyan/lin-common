@@ -1,0 +1,5 @@
+target/*
+.idea
+.settngs/
+.project
+.classpath
