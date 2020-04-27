@@ -15,6 +15,8 @@ public class HelloRunnable implements Runnable {
 
 	public static void main(String args[]) {
 		(new Thread(new HelloRunnable())).start();
+
+		String a=null;
 	}
 
 }

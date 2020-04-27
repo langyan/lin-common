@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -36,7 +37,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compile.encoding>UTF-8</maven.compile.encoding>
 		<maven.test.compile.encoding>UTF-8</maven.test.compile.encoding>
-
+		<objectboxVersion>2.5.1</objectboxVersion>
 		<!-- tools version setting -->
 
 		<jawr.version>3.6</jawr.version>
@@ -47,7 +48,7 @@
 		<jdk.version>1.8</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<downloadSources>true</downloadSources>
-		
+
 		<jmh.version>1.20</jmh.version>
 
 	</properties>
@@ -55,7 +56,7 @@
 	<!-- 设定主仓库，按设定顺序进行查找。 -->
 	<repositories>
 
-		
+
 
 
 
@@ -98,7 +99,7 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- Other Dependencies -->
 
 		<dependency>
@@ -118,26 +119,26 @@
 			<version>${log4j.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		
-		<!-- JMH-->
-<dependency>
-    <groupId>org.openjdk.jmh</groupId>
-    <artifactId>jmh-core</artifactId>
-    <version>${jmh.version}</version>
-</dependency>
-<dependency>
-    <groupId>org.openjdk.jmh</groupId>
-    <artifactId>jmh-generator-annprocess</artifactId>
-    <version>${jmh.version}</version>
-    <scope>provided</scope>
-</dependency>
-<dependency>
+
+		<!-- JMH -->
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
+			<artifactId>jmh-core</artifactId>
+			<version>${jmh.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
+			<artifactId>jmh-generator-annprocess</artifactId>
+			<version>${jmh.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
 			<version>3.2.5</version>
 		</dependency>
 
-		
+
 
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -145,16 +146,48 @@
 			<version>19.0</version>
 		</dependency>
 
-		
-		
+		<!-- Native libraries, you can remove the ones for systems you do not support -->
+		<!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc -->
 		<dependency>
-			<groupId>com.android.tools.build</groupId>
-			<artifactId>gradle</artifactId>
-			<version>2.2.3</version>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<version>3.30.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>5.1.10.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>5.1.10.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>5.1.10.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus</artifactId>
+			<version>3.3.1</version>
+		</dependency>
+
+        <dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.3</version>
 		</dependency>
 		
-  
-
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.8.8</version>
+		</dependency>
 
 
 	</dependencies>

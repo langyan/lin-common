@@ -4,6 +4,10 @@ import java.time.LocalDateTime;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ *  缺陷: 1. 单线程
+ *        2. 一个任务出现异常，导致无法执行。
+ */
 public class TimerDemo {
 
 	public static void main(String[] args) {

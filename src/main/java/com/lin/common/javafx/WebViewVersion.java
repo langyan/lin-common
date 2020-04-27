@@ -1,0 +1,35 @@
+package com.lin.common.javafx;
+
+import javafx.application.Application;
+import static javafx.application.Application.launch;
+
+import org.springframework.objenesis.strategy.PlatformDescription;
+
+import javafx.scene.Scene;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+import javafx.application.Platform;
+
+public class WebViewVersion extends Application {
+    @Override public void start(Stage stage) {
+        WebView web = new WebView();
+        System.out.println(
+                "Java Version:   " + System.getProperty("java.runtime.version")
+        );
+        System.out.println(
+                "JavaFX Version: " + System.getProperty("javafx.runtime.version")
+        );
+        System.out.println(
+                "OS:             " + System.getProperty("os.name") + ", " 
+                                   + System.getProperty("os.arch")
+        );
+        System.out.println(
+                "User Agent:     " + web.getEngine().getUserAgent()
+        );
+        Platform.exit();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}

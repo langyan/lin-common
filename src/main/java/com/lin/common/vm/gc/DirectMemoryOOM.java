@@ -1,6 +1,6 @@
 package com.lin.common.vm.gc;
 
-import sun.misc.Unsafe;
+
 
 import java.lang.reflect.Field;
 
@@ -15,11 +15,11 @@ public class DirectMemoryOOM {
 
     public static void main(String[] args) throws Exception {
 
-        Field unsafeField = Unsafe.class.getDeclaredFields()[0];
-        unsafeField.setAccessible(true);
-        Unsafe unsafe = (Unsafe) unsafeField.get(null);
-        while (true){
-            unsafe.allocateMemory(_1MB);
-        }
+       // Field unsafeField = Unsafe.class.getDeclaredFields()[0];
+        //unsafeField.setAccessible(true);
+        //Unsafe unsafe = (Unsafe) unsafeField.get(null);
+        //while (true){
+        //    unsafe.allocateMemory(_1MB);
+        //}
     }
 }
