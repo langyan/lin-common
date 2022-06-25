@@ -15,6 +15,7 @@ public class CompletableFutureTest {
 		System.out.println("test2"); 
         System.out.println("test1"); 
         System.out.println("test4"); 
+        System.out.println("test3"); 
 		ExecutorService executor = Executors.newFixedThreadPool(5);
 		CompletableFuture<String> cf1 = CompletableFuture.supplyAsync(() -> {
 		    System.out.println("执行step 1"); 
