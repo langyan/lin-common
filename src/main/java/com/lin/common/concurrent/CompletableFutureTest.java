@@ -11,7 +11,7 @@ import org.openjdk.jmh.runner.RunnerException;
 public class CompletableFutureTest {
 	
 	@Test
-	public void thenCombineSuccess() {
+	public void thenCombineSuccess() {  
 		ExecutorService executor = Executors.newFixedThreadPool(5);
 		CompletableFuture<String> cf1 = CompletableFuture.supplyAsync(() -> {
 		    System.out.println("执行step 1");
