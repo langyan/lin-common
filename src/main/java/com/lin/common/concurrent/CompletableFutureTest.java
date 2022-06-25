@@ -19,7 +19,7 @@ public class CompletableFutureTest {
 		    return "step1 result";
 		}, executor);
 		CompletableFuture<String> cf2 = CompletableFuture.supplyAsync(() -> {
-		    System.out.println("执行step 2");
+		    System.out.println("执行step 2"); 
 		    return "step2 result";
 		});
 		cf1.thenCombine(cf2, (result1, result2) -> {
