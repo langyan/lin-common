@@ -50,7 +50,7 @@ public class CompletableFutureTest {
 		}).thenAccept(result3 -> System.out.println(result3));
 	}
 	
-	public void thenCombineSuccess1() {
+	public void thenCombineSuccess1() { 
 		ExecutorService executor = Executors.newFixedThreadPool(5);
 		CompletableFuture<String> cf1 = CompletableFuture.supplyAsync(() -> {
 		    System.out.println("执行step 1");
