@@ -25,7 +25,7 @@ public class CompletableFutureTest {
 		});
 		cf1.thenCombine(cf2, (result1, result2) -> {
 		    System.out.println(result1 + " , " + result2);
-		    System.out.println("执行step 3");
+		    System.out.println("执行step 3"); 
 		    return "step3 result";
 		}).thenAccept(result3 -> System.out.println(result3));
 	}
