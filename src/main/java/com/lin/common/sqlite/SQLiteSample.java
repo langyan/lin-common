@@ -1,6 +1,5 @@
 package com.lin.common.sqlite;
 
-import java.nio.channels.ShutdownChannelGroupException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,6 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.sqlite.SQLiteConfig;
 
 @Configuration
 @ComponentScan()
@@ -46,7 +46,6 @@ public class SQLiteSample {
 			conn.setAutoCommit(false);
 			prep.executeBatch();
 			conn.setAutoCommit(true);
-
 			rs = stat.executeQuery("select * from people;");
 			while (rs.next()) {
 				System.out.println("id = " + rs.getInt("id"));

@@ -7,6 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 线程安全
  */
 public class AtomicTest {
+	
 
     private static final int THREADS_COUNT = 20;
     public static AtomicInteger race = new AtomicInteger(0);
