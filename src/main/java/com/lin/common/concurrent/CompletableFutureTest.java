@@ -14,7 +14,7 @@ public class CompletableFutureTest {
 	public void thenCombineSuccess() {  
 		ExecutorService executor = Executors.newFixedThreadPool(5);
 		CompletableFuture<String> cf1 = CompletableFuture.supplyAsync(() -> {
-		    System.out.println("执行step 1");
+		    System.out.println("执行step 1"); 
 		    
 		    return "step1 result";
 		}, executor);
