@@ -16,7 +16,7 @@
 
 		<!-- main version setting -->
 		<mockito.version>1.9.5</mockito.version>
-		<junit.version>4.11</junit.version>
+		<junit.version>5.9.2</junit.version>
 		<slf4j-api.version>1.7.5</slf4j-api.version>
 		<log4j.version>1.2.17</log4j.version>
 		<servlet-api.version>2.5</servlet-api.version>
@@ -49,7 +49,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<downloadSources>true</downloadSources>
 
-		<jmh.version>1.20</jmh.version>
+		<jmh.version>1.36</jmh.version>
 
 	</properties>
 
@@ -71,6 +71,22 @@
 			<name>Central Repository 2</name>
 			<url>http://repo1.maven.org/maven2/</url>
 		</repository>
+		
+		<repository>
+  <id>central</id>
+  <url>https://maven.aliyun.com/repository/central</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
+
+ <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
 
 
 
@@ -83,7 +99,11 @@
 	<!-- 依赖项定义 -->
 	<dependencies>
 
-
+       <dependency>
+            <groupId>com.github.kenglxn.qrgen</groupId>
+            <artifactId>javase</artifactId>
+            <version>2.6.0</version>
+        </dependency>
 
 
 		<!-- Test Dependencies -->
@@ -93,11 +113,20 @@
 			<version>${mockito.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
+		</dependency>
+		  -->
+		
+		<dependency>
+		    <groupId>org.junit.jupiter</groupId>
+		    <artifactId>junit-jupiter-engine</artifactId>
+		    <version>${junit.version}</version>
+		    <scope>test</scope>
 		</dependency>
 
 		<!-- Other Dependencies -->
@@ -193,6 +222,25 @@
   <groupId>com.squareup.okhttp3</groupId>
   <artifactId>okhttp</artifactId>
   <version>4.9.3</version>
+</dependency>
+
+<dependency>
+  <groupId>com.github.ben-manes.caffeine</groupId>
+  <artifactId>caffeine</artifactId>
+  <version>3.0.5</version>
+</dependency>
+
+<dependency>
+	<groupId>net.java.openjfx.backport</groupId>
+	<artifactId>openjfx-78-backport</artifactId>
+	<version>1.8.0-ea-b96.1</version>
+</dependency>
+
+ <!-- https://mvnrepository.com/artifact/com.google.ortools/ortools-java -->
+<dependency>
+    <groupId>com.google.ortools</groupId>
+    <artifactId>ortools-java</artifactId>
+    <version>9.9.3963</version>
 </dependency>
 
 	</dependencies>

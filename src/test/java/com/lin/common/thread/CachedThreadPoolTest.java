@@ -7,15 +7,15 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class CachedThreadPoolTest {
-	
-	// 线程数
+
+    // 线程数
     private static final int threads = 10;
     // 用于计数线程是否执行完成
     CountDownLatch countDownLatch = new CountDownLatch(threads);
- 
+
     /**
      * newCachedThreadPool execute
      *
@@ -40,7 +40,7 @@ public class CachedThreadPoolTest {
         countDownLatch.await();
         System.out.println("---- end ----");
     }
- 
+
     /**
      * newCachedThreadPool submit submit
      */
@@ -49,7 +49,7 @@ public class CachedThreadPoolTest {
         System.out.println("---- start ----");
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
         for (int i = 0; i < threads; i++) {
-//            Callable 带返回值
+            // Callable 带返回值
             cachedThreadPool.submit(new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -66,7 +66,7 @@ public class CachedThreadPoolTest {
         countDownLatch.await();
         System.out.println("---- end ----");
     }
- 
+
     /**
      * newCachedThreadPool submit Callable
      *
@@ -78,10 +78,11 @@ public class CachedThreadPoolTest {
         System.out.println("---- start ----");
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
         for (int i = 0; i < threads; i++) {
-//          Runnable 带返回值
+            // Runnable 带返回值
             FutureTask<?> futureTask = new FutureTask<>(new Callable<String>() {
                 /**
                  * call
+                 * 
                  * @return currentThreadName
                  */
                 @Override
@@ -94,6 +95,5 @@ public class CachedThreadPoolTest {
         }
         System.out.println("---- end ----");
     }
-
 
 }
